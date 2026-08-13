@@ -1,0 +1,29 @@
+body{
+
+    font-family: Arial;
+    padding:40px;
+
+}
+
+button{
+
+    padding:10px 20px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+#sources{
+
+    margin-top:30px;
+
+}
+
+#sources div{
+
+    padding:12px;
+    margin-bottom:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+
+}

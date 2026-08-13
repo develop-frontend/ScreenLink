@@ -1,0 +1,19 @@
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+
+# Electron
+*.local
+
+# Temporary files
+*.tmp
+*.temp

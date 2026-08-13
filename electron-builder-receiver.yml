@@ -1,0 +1,12 @@
+appId: com.screenlink.receiver
+productName: ScreenLink Receiver
+
+directories:
+  output: dist/receiver
+
+win:
+  target:
+    - nsis
+
+extraMetadata:
+  main: main-receiver.js

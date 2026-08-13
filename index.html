@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Electron Capture</title>
+
+<style>
+
+body{
+
+    background:#202020;
+
+    color:white;
+
+    font-family:Arial;
+
+    margin:20px;
+
+}
+
+button{
+
+    margin:5px;
+
+    padding:10px 20px;
+
+    font-size:16px;
+
+}
+
+video{
+
+    margin-top:20px;
+
+    width:100%;
+
+    border:1px solid #555;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Desktop Capture Test</h2>
+
+<div id="buttons"></div>
+
+<video
+id="video"
+autoplay
+playsinline
+muted>
+</video>
+
+<script>
+
+(async()=>{
+
+const sources=await window.electronAPI.getSources();
+
+const container=document.getElementById("buttons");
+
+for(const source of sources){
+
+    const btn=document.createElement("button");
+
+    btn.textContent=source.name;
+
+    btn.onclick=async()=>{
+
+        try{
+
+            const stream=
+            await navigator.mediaDevices.getUserMedia({
+
+                audio:false,
+
+                video:{
+
+                    mandatory:{
+
+                        chromeMediaSource:'desktop',
+
+                        chromeMediaSourceId:source.id
+
+                    }
+
+                }
+
+            });
+
+            document.getElementById("video").srcObject=stream;
+
+        }
+
+        catch(e){
+
+            console.error(e);
+
+            alert(e);
+
+        }
+
+    };
+
+    container.appendChild(btn);
+
+}
+
+})();
+
+</script>
+
+</body>
+
+</html>

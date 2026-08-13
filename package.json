@@ -1,0 +1,24 @@
+{
+  "name": "screenlink",
+  "version": "1.0.0",
+  "description": "ScreenLink - local screen streaming",
+  "main": "main.js",
+  "scripts": {
+    "sender": "electron .",
+    "receiver": "electron . --receiver",
+    "server": "node server/server.js",
+    "build:sender": "electron-builder --config electron-builder-sender.yml",
+    "build:receiver": "electron-builder --config electron-builder-receiver.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "^43.1.0",
+    "electron-builder": "^26.15.3"
+  }
+}

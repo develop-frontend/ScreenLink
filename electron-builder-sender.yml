@@ -1,0 +1,12 @@
+appId: com.screenlink.sender
+productName: ScreenLink Sender
+
+directories:
+  output: dist/sender
+
+win:
+  target:
+    - nsis
+
+extraMetadata:
+  main: main-sender.js
